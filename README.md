@@ -21,9 +21,9 @@ git clone <repository_url>
 ```
 2. Navigate to the project directory:
 ```console
+# Remember to replace <project_directory> with the path to your project directory.
 cd <project_directory>
 ```
-Remember to replace <project_directory> with the path to your project directory.
 3. Create and activate a new virtual environment:
 ```console
 # Create a new virtual environment
