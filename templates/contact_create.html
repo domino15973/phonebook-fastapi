@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phonebook - Create Contact</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Phonebook - Create Contact</h1>
+
+    <form action="/contact" method="POST">
+
+        <input type="text" id="first_name" name="first_name" required placeholder="First Name"><br>
+
+        <input type="text" id="last_name" name="last_name" required placeholder="Last Name"><br>
+
+       <input type="tel" id="phone_number" name="phone_number" required placeholder="Phone Number"><br>
+
+       <input type="email" id="email" name="email" required placeholder="Email" ><br>
+
+       <input class="create-button" type="submit" value="Create">
+   </form>
+   <button> <a href="/">Back to Contacts</a> </button>
+
+</body>
+</html>

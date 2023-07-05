@@ -1,0 +1,188 @@
+    h1{
+        font-family: 'Unbounded', cursive;
+        color: #0c66b0;
+        display: flex;
+        padding: 10px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    form{
+        font-family: 'Roboto', sans-serif;
+        font-size: 17px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input{
+        padding: 10px;
+        border-style: groove;
+        border-width: 1px;
+        font-size: 15px;
+        margin-bottom: 10px;
+        width: 300px;
+    }
+
+    .create-button{
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        margin-top: 15px;
+        padding: 8px 0 8px 0;
+        background-color: #0cb014;
+        color: white;
+        border: none;
+        border-radius: 13px;
+        cursor: pointer;
+        width: 100px;
+    }
+
+    a{
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+    }
+
+    button{
+        font-size: 15px;
+        padding: 8px 17px 8px 17px;
+        background-color: #0c66b0;
+        border: none;
+        border-radius: 13px;
+        cursor: pointer;
+        display: grid;
+        margin: auto;
+        margin-top: 15px;
+    }
+
+    .delete-button{
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        margin-top: 15px;
+        padding: 8px 0 8px 0;
+        background-color: #b50e0e;
+        color: white;
+        border: none;
+        border-radius: 13px;
+        cursor: pointer;
+        width: 100px;
+    }
+
+    p{
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        justify-content: center;
+        font-size: 18px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    label{
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        padding: 0 0 10px 0;
+        text-align: center;
+        display: flex;
+    }
+
+    .update-button{
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        margin-top: 15px;
+        padding: 8px 0 8px 0;
+        background-color: #e8c61a;
+        color: white;
+        border: none;
+        border-radius: 13px;
+        cursor: pointer;
+        width: 100px;
+    }
+
+    .table-view{
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    th, td{
+        padding: 5px;
+        margin: 0;
+    }
+
+    .table-list{
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        text-align: center;
+        border-collapse: collapse;
+        border: 1px solid;
+        table-layout: auto;
+        width: 100%;
+    }
+
+    .edit-button{
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        margin-top: 20px;
+        padding: 8px 0 8px 0;
+        background-color: #e8881a;
+        color: white;
+        border: none;
+        border-radius: 13px;
+        cursor: pointer;
+        width: 100px;
+    }
+
+    .table-list th,
+    .table-list td {
+        padding: 5px;
+        margin: 0;
+        border-collapse: collapse;
+        border: 1px solid;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .edit-button-list{
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        margin-top: 10px;
+        padding: 7px;
+        background-color: #e8881a;
+        color: white;
+        border: none;
+        border-radius: 13px;
+        cursor: pointer;
+        width: 50px;
+    }
+
+    .delete-button-list{
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 7px;
+        background-color: #b50e0e;
+        color: white;
+        border: none;
+        border-radius: 13px;
+        cursor: pointer;
+        width: 60px;
+    }
+
+    .view-button{
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 7px;
+        background-color: #e8c61a;
+        color: white;
+        border: none;
+        border-radius: 13px;
+        cursor: pointer;
+        width: 50px;
+    }
+

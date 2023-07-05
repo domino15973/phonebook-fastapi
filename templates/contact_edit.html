@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phonebook - Edit Contact</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Phonebook - Edit Contact</h1>
+
+    <form id="edit-contact-form">
+        <input type="hidden" id="contact-id" value="{{ contact.id }}">
+
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ contact.first_name }}" required><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ contact.last_name }}" required><br>
+
+        <label for="phone_number">Phone Number:</label>
+        <input type="tel" id="phone_number" name="phone_number" value="{{ contact.phone_number }}" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ contact.email }}" required><br>
+
+        <input class="update-button" type="button" value="Update" onclick="updateContact()">
+    </form>
+    <button> <a href="/">Back to Contacts</a> </button>
+
+    <script>
+        function updateContact() {
+            var contactId = document.getElementById("contact-id").value;
+            var firstName = document.getElementById("first_name").value;
+            var lastName = document.getElementById("last_name").value;
+            var phoneNumber = document.getElementById("phone_number").value;
+            var email = document.getElementById("email").value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("PUT", "/contact/" + contactId + "/edit", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        // Handle the successful response here, e.g. show a success message
+                        console.log("Contact updated successfully");
+                        window.location.href = "/";
+                    } else {
+                        // Handle the error response here, e.g. show an error message
+                        console.error("Failed to update contact");
+                    }
+                }
+            };
+            xhr.send("first_name=" + encodeURIComponent(firstName) +
+                     "&last_name=" + encodeURIComponent(lastName) +
+                     "&phone_number=" + encodeURIComponent(phoneNumber) +
+                     "&email=" + encodeURIComponent(email));
+        }
+    </script>
+</body>
+</html>

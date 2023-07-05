@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phonebook - Delete Contact</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Phonebook - Delete Contact</h1>
+
+    <p>Are you sure you want to delete contact {{ contact.first_name }} {{ contact.last_name }}?</p>
+
+    <form id="delete-contact-form" action="/contact/{{ contact.id }}/delete" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+
+        <input type="hidden" id="contact-id" value="{{ contact.id }}">
+
+        <input class="delete-button" type="submit" value="Delete">
+    </form>
+    <button > <a href="/">Back to Contacts</a> </button>
+
+    <script>
+        document.getElementById("delete-contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var contactId = document.getElementById("contact-id").value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("DELETE", "/contact/" + contactId + "/delete", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 || xhr.status === 204) {
+                        // Handle the successful response here, e.g. show a success message
+                        console.log("Contact deleted successfully");
+                        window.location.href = "/";
+                    } else {
+                        // Handle the error response here, e.g. show an error message
+                        console.error("Failed to delete contact");
+                    }
+                }
+            };
+            xhr.send();
+        });
+    </script>
+</body>
+</html>
