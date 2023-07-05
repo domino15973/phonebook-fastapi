@@ -17,7 +17,7 @@ Before proceeding with the installation, ensure that you have the following:
 
 1. Clone the repository from GitHub:
 ```console
-git clone <repository_url>
+git clone https://github.com/domino15973/phonebook-fastapi
 ```
 2. Navigate to the project directory:
 ```console
